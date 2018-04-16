@@ -1,32 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
+// All games inside games directory
+import GemCollector from './games/gemCollector/';
+import Squad from './games/squad/games';
 
-import {
-  GemCollectorPlayerVSPlayer,
-  GemCollectorBotVSPlayer,
-  GemCollectorBotVSBot,
-  GemCollectorBotVSCustom,
-} from './components/examples';
-
-const App = (props) => {
-  let component;
-  switch(props.mode) {
-    case 'bot-vs-bot':
-      component =  (<GemCollectorBotVSBot {...props} />);
-      break;
-    case 'bot-vs-player':
-      component =  ( <GemCollectorBotVSPlayer {...props} />);
-      break;
-    case 'player-vs-player':
-      component =  ( <GemCollectorPlayerVSPlayer {...props} />);
-      break;
-    case 'bot-vs-custom-code':
-      component =  ( <GemCollectorBotVSCustom {...props} />);
-      break;
-    default :
-      component =  ( <GemCollectorBotVSPlayer {...props} />);
-      break;
+const AlsetReactGame = props => {
+  switch (props.game) {
+    case 'gemCollectorOrg': {
+      //'gemCollector'
+      return <GemCollector {...props} />;
+    }
+    // create a case here for new game
+    default: {
+      return <Squad {...props} />;
+    }
   }
-  return component;
-}
+};
 
-export default App;
+AlsetReactGame.defaultProps = {
+  onPlay: () => {},
+  onPause: () => {},
+  onEnd: () => {},
+  onError: () => {},
+};
+
+export default AlsetReactGame;
