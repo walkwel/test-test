@@ -23,4 +23,4 @@ reder(){
 1.  player-vs-player
 2.  player-vs-bot
 3.  bot-vs-bot
-4.  Bot vs Custom
+4.  bot-vs-custom-code
