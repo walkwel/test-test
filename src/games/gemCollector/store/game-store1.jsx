@@ -25,7 +25,7 @@ class GameStore {
     let newTimestamp = Date.now();
     if (newTimestamp - this.timeStampData >= 2000) {
       this.timeStampData = Date.now();
-      if (this.stonesData.length == 0) {
+      if (this.stonesData.length === 0) {
         let stonesQuant = Math.floor(
           Math.random() * (this.config.maxGems - this.config.minGems + 1) + this.config.minGems,
         );

@@ -24,7 +24,7 @@ export default class Character extends Component {
         this.getCollectives = this.getCollectives.bind(this);
         this.keyListener = new KeyListener();
         document.addEventListener("keydown",(e)=>{
-            if(Store.currentControllable[this.props.gameId]==this.props.charId&&Store.mode=="play"){
+            if(Store.currentControllable[this.props.gameId]===this.props.charId&&Store.mode==="play"){
                 switch(e.key){
                     case this.props.keys.left:
                         Store.changeDirection(this.props.gameId, this.props.charId,'left');
@@ -51,10 +51,10 @@ export default class Character extends Component {
         var player = document.getElementById('pl'+this.props.charId+"-"+this.props.gameId).childNodes[0];
         var parentEl = document.getElementById('pl'+this.props.charId+"-"+this.props.gameId).parentElement;
         var direction = Store.direction[this.props.gameId][this.props.charId];
-        if(Util.rect2parent(player,parentEl,direction)&&Store.mode=="play")
+        if(Util.rect2parent(player,parentEl,direction)&&Store.mode==="play")
             Store.moveCharacter(this.props.gameId, this.props.charId)
         this.getCollectives();
-        if(Store.mode=="restart"){
+        if(Store.mode==="restart"){
             Store.restartCharacter(this.props.gameId, this.props.charId);
         }
     }

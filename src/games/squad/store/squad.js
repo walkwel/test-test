@@ -50,7 +50,7 @@ class squadStore{
     switchPlayer(gameId){
         if(Date.now()-this.timestamp<1000)
             return;
-        if(this.currentControllable[gameId]==0)
+        if(this.currentControllable[gameId]===0)
             this.currentControllable[gameId] = 1;
         else
             this.currentControllable[gameId] = 0;

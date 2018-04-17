@@ -19,7 +19,7 @@ export default class CodeEditor extends Component {
            <textarea id="codeEditor" style={{width:"100%", height:"410px"}} defaultValue={`var player = world.player;
 var closestGem = false;
 world.collectives.forEach(stone => {
-    if(closestGem==false)
+    if(closestGem===false)
         closestGem = stone;
     else if(
         Math.sqrt(Math.pow((player.x-closestGem.x),2)+Math.pow((player.y-closestGem.y),2))>
