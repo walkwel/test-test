@@ -32,7 +32,7 @@ class Controls extends Component {
         >
           {'restart'}
         </div>
-        {this.props.store.mode == 'play' ? (
+        {this.props.store.mode === 'play' ? (
           <div
             onClick={() => {
               this.props.store.mode = 'pause';

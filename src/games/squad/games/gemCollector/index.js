@@ -61,20 +61,20 @@ export default class GemCollector extends Component {
                         max={this.props.gameData.config.game.collectives.max} 
                         gameId={0}              
                     />
-                    {(this.props.gameData.mode=="player-vs-bot"
-                    ||this.props.gameData.mode=="player-vs-player")&&
+                    {(this.props.gameData.mode==="player-vs-bot"
+                    ||this.props.gameData.mode==="player-vs-player")&&
                     <Character 
                         charId={0}
                         type={this.props.gameData.config.game.character1.type}
                         keys={this.props.gameData.player1Keys}
                     />}
-                    {this.props.gameData.mode=="player-vs-player"&&
+                    {this.props.gameData.mode==="player-vs-player"&&
                     <Character
                         charId={1}
                         type={this.props.gameData.config.game.character2.type}
                         keys={this.props.gameData.player2Keys}
                     />}
-                    {this.props.gameData.mode=="player-vs-bot"&&
+                    {this.props.gameData.mode==="player-vs-bot"&&
                     <Bot
                         charId={1}
                         type={this.props.gameData.config.game.character2.type}
@@ -83,7 +83,7 @@ export default class GemCollector extends Component {
                         player1Function={this.props.player1Function}
                         onError={this.props.onError}
                     />}
-                    {(this.props.gameData.mode=="bot-vs-bot")&&
+                    {(this.props.gameData.mode==="bot-vs-bot")&&
                     <Bot
                         charId={0}
                         type={this.props.gameData.config.game.character1.type}
@@ -92,7 +92,7 @@ export default class GemCollector extends Component {
                         player1Function={this.props.player1Function}
                         onError={this.props.onError}
                     />}
-                    {(this.props.gameData.mode=="bot-vs-bot")&&
+                    {(this.props.gameData.mode==="bot-vs-bot")&&
                     <Bot
                         charId={1}
                         type={this.props.gameData.config.game.character2.type}

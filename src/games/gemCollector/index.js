@@ -102,7 +102,7 @@ class PlayGemCollectorGame extends Component {
   }
 
   getCommands(world, playerNum) {
-    //let player = world.bodies.find(body=>{if(body.label=="character"&&body.customId==playerNum-1) return body;});
+    //let player = world.bodies.find(body=>{if(body.label==="character"&&body.customId===playerNum-1) return body;});
     let player = world.players[playerNum - 1];
     let closestGem = false;
     world.stones.forEach(stone => {

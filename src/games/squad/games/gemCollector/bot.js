@@ -28,7 +28,7 @@ export default class Character extends Component {
         var player = document.getElementById('bt'+this.props.charId).childNodes[0];
         var parentEl = document.getElementById('bt'+this.props.charId).parentElement;
         var direction = Store.direction[this.props.charId];
-        if(Store.mode=="play"){
+        if(Store.mode==="play"){
             if(Util.rect2parent(player,parentEl,direction))
                 Store.moveCharacter(this.props.charId);
             var world = {
@@ -63,7 +63,7 @@ export default class Character extends Component {
             }
         }
         this.getCollectives();
-        if(Store.mode=="restart"){
+        if(Store.mode==="restart"){
             Store.restartCharacter(this.props.charId);
         }
     }

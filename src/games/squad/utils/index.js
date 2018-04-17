@@ -18,13 +18,13 @@ class Utils{
 		var parentLeft = parentOffset.left;
 		var parentRight = parentOffset.right;
         var parentBottom = parentOffset.bottom;
-		if(direction == "left")
+		if(direction === "left")
 			return left<=parentLeft?false:true;
-		else if(direction == "right")
+		else if(direction === "right")
 			return right>=parentRight?false:true;
-		else if(direction == "up")
+		else if(direction === "up")
 			return top<=parentTop?false:true;
-		else if(direction == "down")
+		else if(direction === "down")
 			return bottom>=parentBottom?false:true;
     }
     rundomGenerateCollectives(min, max, size, width, height){
@@ -42,7 +42,7 @@ class Utils{
 		var player = world.player;
         var closestGem = false;
         world.collectives.forEach(stone => {
-			if(closestGem==false)
+			if(closestGem===false)
 				closestGem = stone;
 			else if(
 				Math.sqrt(Math.pow((player.x-closestGem.x),2)+Math.pow((player.y-closestGem.y),2))>

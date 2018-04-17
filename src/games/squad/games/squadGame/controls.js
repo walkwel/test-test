@@ -16,7 +16,7 @@ export default class Controls extends Component {
     this.startCountDown();
   }
   loop() {
-    if (Store.time == 0 && Store.mode != 'restart' && Store.mode != 'pause') {
+    if (Store.time === 0 && Store.mode !== 'restart' && Store.mode !== 'pause') {
       Store.mode = 'pause';
       if (this.props.onEnd) {
         var player = Store.score[0] > Store.score[1] ? 'player1' : 'player2';
@@ -26,11 +26,11 @@ export default class Controls extends Component {
   }
   startCountDown() {
     setInterval(() => {
-      if (Store.mode == 'play' && Store.time > 0) Store.time--;
+      if (Store.mode === 'play' && Store.time > 0) Store.time--;
     }, 1000);
   }
   pauseResumeGame() {
-    if (Store.mode == 'pause') {
+    if (Store.mode === 'pause') {
       Store.mode = 'play';
       if (this.props.onPlay) this.props.onPlay();
     } else {
@@ -66,7 +66,7 @@ export default class Controls extends Component {
   render() {
     return (
       <div>
-        {Store.time == 0 && (
+        {Store.time === 0 && (
           <div
             style={{
               position: 'absolute',
@@ -110,7 +110,7 @@ export default class Controls extends Component {
           Restart
         </button>
         <button style={{ position: 'fixed', left: '70px', top: 0, zIndex: 1 }} onClick={() => this.pauseResumeGame()}>
-          {Store.mode == 'play' ? 'Pause' : 'Resume'}
+          {Store.mode === 'play' ? 'Pause' : 'Resume'}
         </button>
       </div>
     );

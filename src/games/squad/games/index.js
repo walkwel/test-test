@@ -78,11 +78,12 @@ export default class ALSETReactGame extends Component {
     }
   }
   getGameData(gameType) {
-    var data = {};
-    if (gameType == 'squadGemCollector') var defaultConfig = gemCollectorDefaultConfig;
-    else if (gameType == 'singlePlayerTwoWindows') var defaultConfig = SinglePlayerTwoWindowsDefaultConfig;
-    else var defaultConfig = SquadDefaultConfig;
-    var customConfig = this.props.config ? this.props.config : {};
+    let data = {};
+    let defaultConfig = {};
+    if (gameType === 'squadGemCollector') defaultConfig = gemCollectorDefaultConfig;
+    else if (gameType === 'singlePlayerTwoWindows') defaultConfig = SinglePlayerTwoWindowsDefaultConfig;
+    else defaultConfig = SquadDefaultConfig;
+    let customConfig = this.props.config ? this.props.config : {};
     data.showCodeEditor = this.props.showCodeEditor || customConfig.showCodeEditor || defaultConfig.showCodeEditor;
     data.config = this.props.config || defaultConfig;
     data.player = this.props.player || customConfig.player || defaultConfig.player;
