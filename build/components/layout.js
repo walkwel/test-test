@@ -172,7 +172,8 @@ var Layout = function (_React$Component) {
               paper: classes.drawerPaper
             },
             ModalProps: {
-              keepMounted: true }
+              keepMounted: true // Better open performance on mobile.
+            }
           })
         ),
         _react2.default.createElement(_Hidden2.default, { smDown: true, implementation: 'css' }),
