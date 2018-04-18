@@ -3,34 +3,32 @@
 ```npm i alset-reactgame-test --save```
 
 ## How To Use
-
-```
-import AlsetReactGame from 'alset-reactgame-test';
-
-....
-....
-render(){
-    return <ALSET-ReactGame
+#### Props :
+```javascript
+ <ALSET-ReactGame
                 game={String}                     // defaults -> Squad
                 showCodeEditor={boolean}          // defaults -> false
-                config={jsonString}               // defaults -> null
-                player={String}                   // defaults -> player1
-                player1Function={function(world,player){returns actions}} // defaults -> null
-                player2Function={function(world,player){returns actions}}// defaults -> null
                 mode={String}                     // defaults -> player-vs-bot
-                player1Keys = {obj}  // defaults -> {s:left, f:right, e:up, d:down, w:action}
-                player2Keys = {obj}  // defaults -> {j:left, l:right, i:up, k:down, p:action}   
-                onPlay={func}                     // defaults -> noop
-                onPause={func}                    // defaults -> noop
-                onEnd={func}        // defaults -> noop (reports winner player1/player2)
-                onError={func}                    // defaults -> noop
-                onStateChange={func}              // defaults -> noop
-                submitResponse={function(response){return String}} // optional  
+                player1Keys = {obj}  // defaults -> {left:'s',right:'f', up:'e', down:'d', action:'w'}
+                player2Keys = {obj}  // defaults -> {left:'j',right:'l', up:'i', down:'k', action:'p'}
             />
+```
+#### Example :
+```javascript
+import React from 'react';
+import AlsetReactGame from 'alset-reactgame-test';
 
+const Game =(props)=>{
+    const playerKeys={left:'1',right:'3', up:'5', down:'2', action:'0'}
+    return <ALSET-ReactGame
+                game='squad'                     
+                showCodeEditor={false}          
+                mode={'player-vs-bot'}                     
+                player1Keys = {playerKeys}
+            />
 }
-....
-....
+
+export default Game;
 ```
 
 ### Type of games
