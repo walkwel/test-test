@@ -1,7 +1,7 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 exports.default = undefined;
 
@@ -40,44 +40,44 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Obstacle = function (_Component) {
-	_inherits(Obstacle, _Component);
+  _inherits(Obstacle, _Component);
 
-	function Obstacle(props) {
-		_classCallCheck(this, Obstacle);
+  function Obstacle(props) {
+    _classCallCheck(this, Obstacle);
 
-		return _possibleConstructorReturn(this, (Obstacle.__proto__ || Object.getPrototypeOf(Obstacle)).call(this, props));
-	}
+    return _possibleConstructorReturn(this, (Obstacle.__proto__ || Object.getPrototypeOf(Obstacle)).call(this, props));
+  }
 
-	_createClass(Obstacle, [{
-		key: 'getWrapperStyles',
-		value: function getWrapperStyles() {
-			return {
-				position: 'absolute',
-				transform: 'translate(0px, 0px) translateZ(0)',
-				transformOrigin: 'top left'
-			};
-		}
-	}, {
-		key: 'render',
-		value: function render() {
-			switch (this.props.obstacle.type) {
-				case 'bush':
-					return _react2.default.createElement(_Bush2.default, { obstacleData: this.props.obstacle });
-				case 'fir-tree':
-					return _react2.default.createElement(_FirTree2.default, { obstacleData: this.props.obstacle });
-				case 'palm-tree':
-					return _react2.default.createElement(_PalmTree2.default, { obstacleData: this.props.obstacle });
-				case 'stone1':
-					return _react2.default.createElement(_Stone2.default, { obstacleData: this.props.obstacle });
-				case 'stone2':
-					return _react2.default.createElement(_Stone4.default, { obstacleData: this.props.obstacle });
-				default:
-					return _react2.default.createElement(_Bush2.default, { obstacleData: this.props.obstacle });
-			}
-		}
-	}]);
+  _createClass(Obstacle, [{
+    key: 'getWrapperStyles',
+    value: function getWrapperStyles() {
+      return {
+        position: 'absolute',
+        transform: 'translate(0px, 0px) translateZ(0)',
+        transformOrigin: 'top left'
+      };
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      switch (this.props.obstacle.type) {
+        case 'bush':
+          return _react2.default.createElement(_Bush2.default, { obstacleData: this.props.obstacle });
+        case 'fir-tree':
+          return _react2.default.createElement(_FirTree2.default, { obstacleData: this.props.obstacle });
+        case 'palm-tree':
+          return _react2.default.createElement(_PalmTree2.default, { obstacleData: this.props.obstacle });
+        case 'stone1':
+          return _react2.default.createElement(_Stone2.default, { obstacleData: this.props.obstacle });
+        case 'stone2':
+          return _react2.default.createElement(_Stone4.default, { obstacleData: this.props.obstacle });
+        default:
+          return _react2.default.createElement(_Bush2.default, { obstacleData: this.props.obstacle });
+      }
+    }
+  }]);
 
-	return Obstacle;
+  return Obstacle;
 }(_react.Component);
 
 exports.default = Obstacle;

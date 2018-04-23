@@ -135,17 +135,17 @@ var GemCollector = function (_Component) {
                                 max: this.props.gameData.config.game.collectives.max,
                                 gameId: 0
                             }),
-                            (this.props.gameData.mode == "player-vs-bot" || this.props.gameData.mode == "player-vs-player") && _react2.default.createElement(_character2.default, {
+                            (this.props.gameData.mode === "player-vs-bot" || this.props.gameData.mode === "player-vs-player") && _react2.default.createElement(_character2.default, {
                                 charId: 0,
                                 type: this.props.gameData.config.game.character1.type,
                                 keys: this.props.gameData.player1Keys
                             }),
-                            this.props.gameData.mode == "player-vs-player" && _react2.default.createElement(_character2.default, {
+                            this.props.gameData.mode === "player-vs-player" && _react2.default.createElement(_character2.default, {
                                 charId: 1,
                                 type: this.props.gameData.config.game.character2.type,
                                 keys: this.props.gameData.player2Keys
                             }),
-                            this.props.gameData.mode == "player-vs-bot" && _react2.default.createElement(_bot2.default, {
+                            this.props.gameData.mode === "player-vs-bot" && _react2.default.createElement(_bot2.default, {
                                 charId: 1,
                                 type: this.props.gameData.config.game.character2.type,
                                 getCommands: this.props.getCommands,
@@ -153,7 +153,7 @@ var GemCollector = function (_Component) {
                                 player1Function: this.props.player1Function,
                                 onError: this.props.onError
                             }),
-                            this.props.gameData.mode == "bot-vs-bot" && _react2.default.createElement(_bot2.default, {
+                            this.props.gameData.mode === "bot-vs-bot" && _react2.default.createElement(_bot2.default, {
                                 charId: 0,
                                 type: this.props.gameData.config.game.character1.type,
                                 getCommands: this.props.getCommands,
@@ -161,7 +161,7 @@ var GemCollector = function (_Component) {
                                 player1Function: this.props.player1Function,
                                 onError: this.props.onError
                             }),
-                            this.props.gameData.mode == "bot-vs-bot" && _react2.default.createElement(_bot2.default, {
+                            this.props.gameData.mode === "bot-vs-bot" && _react2.default.createElement(_bot2.default, {
                                 charId: 1,
                                 type: this.props.gameData.config.game.character2.type,
                                 getCommands: this.props.getCommands,

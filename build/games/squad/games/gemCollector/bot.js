@@ -79,7 +79,7 @@ var Character = (0, _mobxReact.observer)(_class = (_temp = _class2 = function (_
             var player = document.getElementById('bt' + _this.props.charId).childNodes[0];
             var parentEl = document.getElementById('bt' + _this.props.charId).parentElement;
             var direction = _gemCollector2.default.direction[_this.props.charId];
-            if (_gemCollector2.default.mode == "play") {
+            if (_gemCollector2.default.mode === "play") {
                 if (_index2.default.rect2parent(player, parentEl, direction)) _gemCollector2.default.moveCharacter(_this.props.charId);
                 var world = {
                     player: _gemCollector2.default.position[_this.props.charId],
@@ -98,7 +98,7 @@ var Character = (0, _mobxReact.observer)(_class = (_temp = _class2 = function (_
                 }
             }
             _this.getCollectives();
-            if (_gemCollector2.default.mode == "restart") {
+            if (_gemCollector2.default.mode === "restart") {
                 _gemCollector2.default.restartCharacter(_this.props.charId);
             }
         };

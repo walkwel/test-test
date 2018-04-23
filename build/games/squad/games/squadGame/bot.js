@@ -79,7 +79,7 @@ var Character = (0, _mobxReact.observer)(_class = (_temp = _class2 = function (_
             var player = document.getElementById('bt' + _this.props.charId + "-" + _this.props.gameId).childNodes[0];
             var parentEl = document.getElementById('bt' + _this.props.charId + "-" + _this.props.gameId).parentElement;
             var direction = _squad2.default.direction[_this.props.gameId][_this.props.charId];
-            if (_squad2.default.mode == "play") {
+            if (_squad2.default.mode === "play") {
                 if (_index2.default.rect2parent(player, parentEl, direction)) _squad2.default.moveCharacter(_this.props.gameId, _this.props.charId);
                 var world = {
                     player: _squad2.default.position[_this.props.gameId][_this.props.charId],
@@ -98,7 +98,7 @@ var Character = (0, _mobxReact.observer)(_class = (_temp = _class2 = function (_
                 }
             }
             _this.getCollectives();
-            if (_squad2.default.mode == "restart") {
+            if (_squad2.default.mode === "restart") {
                 _squad2.default.restartCharacter(_this.props.gameId, _this.props.charId);
             }
         };

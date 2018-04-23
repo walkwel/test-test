@@ -1,7 +1,7 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 exports.default = undefined;
 
@@ -54,47 +54,47 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Tile = function (_Component) {
-    _inherits(Tile, _Component);
+  _inherits(Tile, _Component);
 
-    function Tile() {
-        _classCallCheck(this, Tile);
+  function Tile() {
+    _classCallCheck(this, Tile);
 
-        return _possibleConstructorReturn(this, (Tile.__proto__ || Object.getPrototypeOf(Tile)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Tile.__proto__ || Object.getPrototypeOf(Tile)).apply(this, arguments));
+  }
+
+  _createClass(Tile, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        this.props.tiles.map(function (tile, index) {
+          switch (tile.type) {
+            case 'grass':
+              return _react2.default.createElement(_Grass2.default, { key: index, tileData: tile });
+            case 'concrete':
+              return _react2.default.createElement(_Concrete2.default, { key: index, tileData: tile });
+            case 'sand':
+              return _react2.default.createElement(_Sand2.default, { key: index, tileData: tile });
+            case 'building':
+              return _react2.default.createElement(_Building2.default, { key: index, tileData: tile });
+            case 'roadCross':
+              return _react2.default.createElement(_RoadCross2.default, { key: index, tileData: tile });
+            case 'roadLeftRight':
+              return _react2.default.createElement(_RoadLeftRight2.default, { key: index, tileData: tile });
+            case 'roadUpDown':
+              return _react2.default.createElement(_RoadUpDown2.default, { key: index, tileData: tile });
+            case 'roof':
+              return _react2.default.createElement(_Roof2.default, { key: index, tileData: tile });
+            default:
+              return _react2.default.createElement(_Grass2.default, { key: index, tileData: tile });
+          }
+        })
+      );
     }
+  }]);
 
-    _createClass(Tile, [{
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'div',
-                null,
-                this.props.tiles.map(function (tile, index) {
-                    switch (tile.type) {
-                        case 'grass':
-                            return _react2.default.createElement(_Grass2.default, { key: index, tileData: tile });
-                        case 'concrete':
-                            return _react2.default.createElement(_Concrete2.default, { key: index, tileData: tile });
-                        case 'sand':
-                            return _react2.default.createElement(_Sand2.default, { key: index, tileData: tile });
-                        case 'building':
-                            return _react2.default.createElement(_Building2.default, { key: index, tileData: tile });
-                        case 'roadCross':
-                            return _react2.default.createElement(_RoadCross2.default, { key: index, tileData: tile });
-                        case 'roadLeftRight':
-                            return _react2.default.createElement(_RoadLeftRight2.default, { key: index, tileData: tile });
-                        case 'roadUpDown':
-                            return _react2.default.createElement(_RoadUpDown2.default, { key: index, tileData: tile });
-                        case 'roof':
-                            return _react2.default.createElement(_Roof2.default, { key: index, tileData: tile });
-                        default:
-                            return _react2.default.createElement(_Grass2.default, { key: index, tileData: tile });
-                    }
-                })
-            );
-        }
-    }]);
-
-    return Tile;
+  return Tile;
 }(_react.Component);
 
 exports.default = Tile;

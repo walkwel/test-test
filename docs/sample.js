@@ -1,1 +1,0 @@
-alert('samlple js working');

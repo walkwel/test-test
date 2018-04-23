@@ -31,7 +31,7 @@ var Utils = function () {
 			var parentLeft = parentOffset.left;
 			var parentRight = parentOffset.right;
 			var parentBottom = parentOffset.bottom;
-			if (direction == "left") return left <= parentLeft ? false : true;else if (direction == "right") return right >= parentRight ? false : true;else if (direction == "up") return top <= parentTop ? false : true;else if (direction == "down") return bottom >= parentBottom ? false : true;
+			if (direction === "left") return left <= parentLeft ? false : true;else if (direction === "right") return right >= parentRight ? false : true;else if (direction === "up") return top <= parentTop ? false : true;else if (direction === "down") return bottom >= parentBottom ? false : true;
 		}
 	}, {
 		key: "rundomGenerateCollectives",
@@ -52,7 +52,7 @@ var Utils = function () {
 			var player = world.player;
 			var closestGem = false;
 			world.collectives.forEach(function (stone) {
-				if (closestGem == false) closestGem = stone;else if (Math.sqrt(Math.pow(player.x - closestGem.x, 2) + Math.pow(player.y - closestGem.y, 2)) > Math.sqrt(Math.pow(player.x - stone.x, 2) + Math.pow(player.y - stone.y, 2))) {
+				if (closestGem === false) closestGem = stone;else if (Math.sqrt(Math.pow(player.x - closestGem.x, 2) + Math.pow(player.y - closestGem.y, 2)) > Math.sqrt(Math.pow(player.x - stone.x, 2) + Math.pow(player.y - stone.y, 2))) {
 					closestGem = stone;
 				}
 			});

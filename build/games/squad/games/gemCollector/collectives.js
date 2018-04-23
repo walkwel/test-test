@@ -1,7 +1,7 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 exports.default = undefined;
 
@@ -56,98 +56,98 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Collectives = (0, _mobxReact.observer)(_class = (_temp = _class2 = function (_Component) {
-    _inherits(Collectives, _Component);
+  _inherits(Collectives, _Component);
 
-    function Collectives() {
-        _classCallCheck(this, Collectives);
+  function Collectives() {
+    _classCallCheck(this, Collectives);
 
-        var _this = _possibleConstructorReturn(this, (Collectives.__proto__ || Object.getPrototypeOf(Collectives)).call(this));
+    var _this = _possibleConstructorReturn(this, (Collectives.__proto__ || Object.getPrototypeOf(Collectives)).call(this));
 
-        _this.loop = function () {
-            _gemCollector2.default.generateCollectives(_this.props.min, _this.props.max, _this.props.size);
-        };
+    _this.loop = function () {
+      _gemCollector2.default.generateCollectives(_this.props.min, _this.props.max, _this.props.size);
+    };
 
-        return _this;
+    return _this;
+  }
+
+  _createClass(Collectives, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.loopID = this.context.loop.subscribe(this.loop);
     }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.context.loop.unsubscribe(this.loopID);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      switch (this.props.type) {
+        case 'coin':
+          return _react2.default.createElement(
+            'div',
+            null,
+            _gemCollector2.default.collectives.map(function (collective, index) {
+              return _react2.default.createElement(_Coin2.default, { key: index, collectiveData: collective, index: index });
+            })
+          );
+        case 'gem':
+          return _react2.default.createElement(
+            'div',
+            null,
+            _gemCollector2.default.collectives.map(function (collective, index) {
+              return _react2.default.createElement(_Gem2.default, { key: index, collectiveData: collective, index: index });
+            })
+          );
+        case 'passenger':
+          return _react2.default.createElement(
+            'div',
+            null,
+            _gemCollector2.default.collectives.map(function (collective, index) {
+              return _react2.default.createElement(_Passenger2.default, { key: index, collectiveData: collective, index: index });
+            })
+          );
+        case 'passengers':
+          return _react2.default.createElement(
+            'div',
+            null,
+            _gemCollector2.default.collectives.map(function (collective, index) {
+              return _react2.default.createElement(_Passengers2.default, { key: index, collectiveData: collective, index: index });
+            })
+          );
+        case 'trash1':
+          return _react2.default.createElement(
+            'div',
+            null,
+            _gemCollector2.default.collectives.map(function (collective, index) {
+              return _react2.default.createElement(_Trash2.default, { key: index, collectiveData: collective, index: index });
+            })
+          );
+        case 'trash2':
+          return _react2.default.createElement(
+            'div',
+            null,
+            _gemCollector2.default.collectives.map(function (collective, index) {
+              return _react2.default.createElement(_Trash4.default, { key: index, collectiveData: collective, index: index });
+            })
+          );
+        default:
+          return _react2.default.createElement(
+            'div',
+            null,
+            _gemCollector2.default.collectives.map(function (collective, index) {
+              return _react2.default.createElement(_Coin2.default, { key: index, collectiveData: collective, index: index });
+            })
+          );
+      }
+    }
+  }]);
 
-    _createClass(Collectives, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            this.loopID = this.context.loop.subscribe(this.loop);
-        }
-    }, {
-        key: 'componentWillUnmount',
-        value: function componentWillUnmount() {
-            this.context.loop.unsubscribe(this.loopID);
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            switch (this.props.type) {
-                case 'coin':
-                    return _react2.default.createElement(
-                        'div',
-                        null,
-                        _gemCollector2.default.collectives.map(function (collective, index) {
-                            return _react2.default.createElement(_Coin2.default, { key: index, collectiveData: collective, index: index });
-                        })
-                    );
-                case 'gem':
-                    return _react2.default.createElement(
-                        'div',
-                        null,
-                        _gemCollector2.default.collectives.map(function (collective, index) {
-                            return _react2.default.createElement(_Gem2.default, { key: index, collectiveData: collective, index: index });
-                        })
-                    );
-                case 'passenger':
-                    return _react2.default.createElement(
-                        'div',
-                        null,
-                        _gemCollector2.default.collectives.map(function (collective, index) {
-                            return _react2.default.createElement(_Passenger2.default, { key: index, collectiveData: collective, index: index });
-                        })
-                    );
-                case 'passengers':
-                    return _react2.default.createElement(
-                        'div',
-                        null,
-                        _gemCollector2.default.collectives.map(function (collective, index) {
-                            return _react2.default.createElement(_Passengers2.default, { key: index, collectiveData: collective, index: index });
-                        })
-                    );
-                case 'trash1':
-                    return _react2.default.createElement(
-                        'div',
-                        null,
-                        _gemCollector2.default.collectives.map(function (collective, index) {
-                            return _react2.default.createElement(_Trash2.default, { key: index, collectiveData: collective, index: index });
-                        })
-                    );
-                case 'trash2':
-                    return _react2.default.createElement(
-                        'div',
-                        null,
-                        _gemCollector2.default.collectives.map(function (collective, index) {
-                            return _react2.default.createElement(_Trash4.default, { key: index, collectiveData: collective, index: index });
-                        })
-                    );
-                default:
-                    return _react2.default.createElement(
-                        'div',
-                        null,
-                        _gemCollector2.default.collectives.map(function (collective, index) {
-                            return _react2.default.createElement(_Coin2.default, { key: index, collectiveData: collective, index: index });
-                        })
-                    );
-            }
-        }
-    }]);
-
-    return Collectives;
+  return Collectives;
 }(_react.Component), _class2.contextTypes = {
-    loop: _propTypes2.default.object,
-    scale: _propTypes2.default.number
+  loop: _propTypes2.default.object,
+  scale: _propTypes2.default.number
 }, _temp)) || _class;
 
 exports.default = Collectives;

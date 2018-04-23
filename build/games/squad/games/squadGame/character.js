@@ -77,9 +77,9 @@ var Character = (0, _mobxReact.observer)(_class = (_temp = _class2 = function (_
             var player = document.getElementById('pl' + _this.props.charId + "-" + _this.props.gameId).childNodes[0];
             var parentEl = document.getElementById('pl' + _this.props.charId + "-" + _this.props.gameId).parentElement;
             var direction = _squad2.default.direction[_this.props.gameId][_this.props.charId];
-            if (_index2.default.rect2parent(player, parentEl, direction) && _squad2.default.mode == "play") _squad2.default.moveCharacter(_this.props.gameId, _this.props.charId);
+            if (_index2.default.rect2parent(player, parentEl, direction) && _squad2.default.mode === "play") _squad2.default.moveCharacter(_this.props.gameId, _this.props.charId);
             _this.getCollectives();
-            if (_squad2.default.mode == "restart") {
+            if (_squad2.default.mode === "restart") {
                 _squad2.default.restartCharacter(_this.props.gameId, _this.props.charId);
             }
         };
@@ -88,7 +88,7 @@ var Character = (0, _mobxReact.observer)(_class = (_temp = _class2 = function (_
         _this.getCollectives = _this.getCollectives.bind(_this);
         _this.keyListener = new _reactGameKit.KeyListener();
         document.addEventListener("keydown", function (e) {
-            if (_squad2.default.currentControllable[_this.props.gameId] == _this.props.charId && _squad2.default.mode == "play") {
+            if (_squad2.default.currentControllable[_this.props.gameId] === _this.props.charId && _squad2.default.mode === "play") {
                 switch (e.key) {
                     case _this.props.keys.left:
                         _squad2.default.changeDirection(_this.props.gameId, _this.props.charId, 'left');

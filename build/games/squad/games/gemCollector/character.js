@@ -77,9 +77,9 @@ var Character = (0, _mobxReact.observer)(_class = (_temp = _class2 = function (_
             var player = document.getElementById('pl' + _this.props.charId).childNodes[0];
             var parentEl = document.getElementById('pl' + _this.props.charId).parentElement;
             var direction = _gemCollector2.default.direction[_this.props.charId];
-            if (_index2.default.rect2parent(player, parentEl, direction) && _gemCollector2.default.mode == "play") _gemCollector2.default.moveCharacter(_this.props.charId);
+            if (_index2.default.rect2parent(player, parentEl, direction) && _gemCollector2.default.mode === "play") _gemCollector2.default.moveCharacter(_this.props.charId);
             _this.getCollectives();
-            if (_gemCollector2.default.mode == "restart") {
+            if (_gemCollector2.default.mode === "restart") {
                 _gemCollector2.default.restartCharacter(_this.props.charId);
             }
         };
@@ -88,7 +88,7 @@ var Character = (0, _mobxReact.observer)(_class = (_temp = _class2 = function (_
         _this.getCollectives = _this.getCollectives.bind(_this);
         _this.keyListener = new _reactGameKit.KeyListener();
         document.addEventListener("keydown", function (e) {
-            if (_gemCollector2.default.mode == "play") {
+            if (_gemCollector2.default.mode === "play") {
                 switch (e.key) {
                     case _this.props.keys.left:
                         _gemCollector2.default.changeDirection(_this.props.charId, 'left');

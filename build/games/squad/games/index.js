@@ -81,7 +81,7 @@ var ALSETReactGame = (0, _mobxReact.observer)(_class = function (_Component) {
             gameData: gameData,
             getCommands: getCommands
           });
-        case 'gemCollector':
+        case 'squadGemCollector':
           return _react2.default.createElement(_index6.default, {
             onPlay: this.props.onPlay,
             onPause: this.props.onPause,
@@ -123,7 +123,8 @@ var ALSETReactGame = (0, _mobxReact.observer)(_class = function (_Component) {
     key: 'getGameData',
     value: function getGameData(gameType) {
       var data = {};
-      if (gameType == 'gemCollector') var defaultConfig = _gemCollectorConfig2.default;else if (gameType == 'singlePlayerTwoWindows') var defaultConfig = _singlePlayerTwoWindowsConfig2.default;else var defaultConfig = _squadConfig2.default;
+      var defaultConfig = {};
+      if (gameType === 'squadGemCollector') defaultConfig = _gemCollectorConfig2.default;else if (gameType === 'singlePlayerTwoWindows') defaultConfig = _singlePlayerTwoWindowsConfig2.default;else defaultConfig = _squadConfig2.default;
       var customConfig = this.props.config ? this.props.config : {};
       data.showCodeEditor = this.props.showCodeEditor || customConfig.showCodeEditor || defaultConfig.showCodeEditor;
       data.config = this.props.config || defaultConfig;

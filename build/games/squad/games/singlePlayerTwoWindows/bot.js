@@ -79,7 +79,7 @@ var Character = (0, _mobxReact.observer)(_class = (_temp = _class2 = function (_
             var player = document.getElementById('bt' + _this.props.gameId).childNodes[0];
             var parentEl = document.getElementById('bt' + _this.props.gameId).parentElement;
             var direction = _singlePlayerTwoWindows2.default.direction[_this.props.gameId];
-            if (_singlePlayerTwoWindows2.default.mode == "play") {
+            if (_singlePlayerTwoWindows2.default.mode === "play") {
                 if (_index2.default.rect2parent(player, parentEl, direction)) {
                     _singlePlayerTwoWindows2.default.moveCharacter(_this.props.gameId);
                 }
@@ -101,7 +101,7 @@ var Character = (0, _mobxReact.observer)(_class = (_temp = _class2 = function (_
                 }
             }
             _this.getCollectives();
-            if (_singlePlayerTwoWindows2.default.mode == "restart") {
+            if (_singlePlayerTwoWindows2.default.mode === "restart") {
                 _singlePlayerTwoWindows2.default.restartCharacter(_this.props.gameId);
             }
         };

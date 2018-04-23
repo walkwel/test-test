@@ -1,7 +1,7 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 exports.default = undefined;
 
@@ -54,149 +54,145 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var SinglePlayerTwoWindows = function (_Component) {
-    _inherits(SinglePlayerTwoWindows, _Component);
+  _inherits(SinglePlayerTwoWindows, _Component);
 
-    function SinglePlayerTwoWindows() {
-        _classCallCheck(this, SinglePlayerTwoWindows);
+  function SinglePlayerTwoWindows() {
+    _classCallCheck(this, SinglePlayerTwoWindows);
 
-        return _possibleConstructorReturn(this, (SinglePlayerTwoWindows.__proto__ || Object.getPrototypeOf(SinglePlayerTwoWindows)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (SinglePlayerTwoWindows.__proto__ || Object.getPrototypeOf(SinglePlayerTwoWindows)).apply(this, arguments));
+  }
+
+  _createClass(SinglePlayerTwoWindows, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      //console.log(document.getElementById("codeEditor").value);
+      if (document.getElementById('codeEditor')) _singlePlayerTwoWindows2.default.func = document.getElementById('codeEditor').value;
     }
-
-    _createClass(SinglePlayerTwoWindows, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            //console.log(document.getElementById("codeEditor").value);
-            if (document.getElementById("codeEditor")) _singlePlayerTwoWindows2.default.func = document.getElementById("codeEditor").value;
-        }
-    }, {
-        key: 'getWrapperStyles',
-        value: function getWrapperStyles() {
-            return {
-                height: '95vh',
-                width: '100%',
-                transform: 'translate(0px, 0px) translateZ(0)',
-                transformOrigin: 'top left'
-            };
-        }
-    }, {
-        key: 'getGameWrapperStyles',
-        value: function getGameWrapperStyles() {
-            return {
-                height: '100%',
-                width: '50%',
-                float: 'left',
-                transform: 'translate(0px, 0px) translateZ(0)',
-                transformOrigin: 'top left'
-            };
-        }
-    }, {
-        key: 'getGameStyles',
-        value: function getGameStyles() {
-            return {
-                height: '80%',
-                width: '100%',
-                float: 'left',
-                transform: 'translate(0px, 10%) translateZ(0)',
-                transformOrigin: 'top left',
-                background: '#3a9bdc'
-            };
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            console.log(this.props.gameData);
-            return _react2.default.createElement(
+  }, {
+    key: 'getWrapperStyles',
+    value: function getWrapperStyles() {
+      return {
+        height: '95vh',
+        width: '100%',
+        transform: 'translate(0px, 0px) translateZ(0)',
+        transformOrigin: 'top left'
+      };
+    }
+  }, {
+    key: 'getGameWrapperStyles',
+    value: function getGameWrapperStyles() {
+      return {
+        height: '100%',
+        width: '50%',
+        float: 'left',
+        transform: 'translate(0px, 0px) translateZ(0)',
+        transformOrigin: 'top left'
+      };
+    }
+  }, {
+    key: 'getGameStyles',
+    value: function getGameStyles() {
+      return {
+        height: '80%',
+        width: '100%',
+        float: 'left',
+        transform: 'translate(0px, 10%) translateZ(0)',
+        transformOrigin: 'top left',
+        background: '#3a9bdc'
+      };
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      console.log(this.props.gameData);
+      return _react2.default.createElement(
+        'div',
+        { style: this.getWrapperStyles() },
+        _react2.default.createElement(
+          _reactGameKit.Loop,
+          null,
+          _react2.default.createElement(_controls2.default, { onPlay: this.props.onPlay, onPause: this.props.onPause, onEnd: this.props.onEnd }),
+          _react2.default.createElement(
+            'div',
+            { id: 'game0', style: this.getGameWrapperStyles() },
+            _react2.default.createElement(
+              _reactGameKit.Stage,
+              { style: this.getGameStyles() },
+              _react2.default.createElement(_tile2.default, { tiles: this.props.gameData.config.game1.tiles }),
+              _react2.default.createElement(
                 'div',
-                { style: this.getWrapperStyles() },
-                _react2.default.createElement(
-                    _reactGameKit.Loop,
-                    null,
-                    _react2.default.createElement(_controls2.default, {
-                        onPlay: this.props.onPlay,
-                        onPause: this.props.onPause,
-                        onEnd: this.props.onEnd
-                    }),
-                    _react2.default.createElement(
-                        'div',
-                        { id: "game0", style: this.getGameWrapperStyles() },
-                        _react2.default.createElement(
-                            _reactGameKit.Stage,
-                            { style: this.getGameStyles() },
-                            _react2.default.createElement(_tile2.default, { tiles: this.props.gameData.config.game1.tiles }),
-                            _react2.default.createElement(
-                                'div',
-                                null,
-                                this.props.gameData.config.game1.obstacles.map(function (obstacle, index) {
-                                    return _react2.default.createElement(_obstacle2.default, { key: index, obstacle: obstacle, index: index });
-                                })
-                            ),
-                            _react2.default.createElement(_collectives2.default, {
-                                type: this.props.gameData.config.game1.collectives.type,
-                                size: this.props.gameData.config.game1.collectives.size,
-                                min: this.props.gameData.config.game1.collectives.min,
-                                max: this.props.gameData.config.game1.collectives.max,
-                                gameId: 0
-                            }),
-                            (this.props.gameData.player == "player1" && this.props.gameData.mode == "player-vs-bot" || this.props.gameData.mode == "player-vs-player") && _react2.default.createElement(_character2.default, {
-                                gameId: 0,
-                                type: this.props.gameData.config.game1.character.type,
-                                keys: this.props.gameData.player1Keys
-                            }),
-                            (this.props.gameData.player == "player2" && this.props.gameData.mode == "player-vs-bot" || this.props.gameData.mode == "bot-vs-bot") && _react2.default.createElement(_bot2.default, {
-                                gameId: 0,
-                                type: this.props.gameData.config.game1.character.type,
-                                getCommands: this.props.getCommands,
-                                showCodeEditor: this.props.gameData.showCodeEditor,
-                                player1Function: this.props.player1Function,
-                                onError: this.props.onError
-                            })
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { id: "game1", style: this.getGameWrapperStyles() },
-                        _react2.default.createElement(
-                            _reactGameKit.Stage,
-                            { style: this.getGameStyles() },
-                            _react2.default.createElement(_tile2.default, { tiles: this.props.gameData.config.game2.tiles }),
-                            _react2.default.createElement(
-                                'div',
-                                null,
-                                this.props.gameData.config.game2.obstacles.map(function (obstacle, index) {
-                                    return _react2.default.createElement(_obstacle2.default, { key: index, obstacle: obstacle, index: index });
-                                })
-                            ),
-                            _react2.default.createElement(_collectives2.default, {
-                                type: this.props.gameData.config.game2.collectives.type,
-                                size: this.props.gameData.config.game2.collectives.size,
-                                min: this.props.gameData.config.game2.collectives.min,
-                                max: this.props.gameData.config.game2.collectives.max,
-                                gameId: 1
-                            }),
-                            (this.props.gameData.player == "player2" && this.props.gameData.mode == "player-vs-bot" || this.props.gameData.mode == "player-vs-player") && _react2.default.createElement(_character2.default, {
-                                gameId: 1,
-                                charId: 0,
-                                type: this.props.gameData.config.game2.character.type,
-                                keys: this.props.gameData.player2Keys
-                            }),
-                            (this.props.gameData.player == "player1" && this.props.gameData.mode == "player-vs-bot" || this.props.gameData.mode == "bot-vs-bot") && _react2.default.createElement(_bot2.default, {
-                                gameId: 1,
-                                charId: 0,
-                                type: this.props.gameData.config.game2.character.type,
-                                getCommands: this.props.getCommands,
-                                showCodeEditor: this.props.gameData.showCodeEditor,
-                                player2Function: this.props.player2Function,
-                                onError: this.props.onError
-                            })
-                        )
-                    ),
-                    this.props.gameData.showCodeEditor ? _react2.default.createElement(_codeEditor2.default, null) : ""
-                )
-            );
-        }
-    }]);
+                null,
+                this.props.gameData.config.game1.obstacles.map(function (obstacle, index) {
+                  return _react2.default.createElement(_obstacle2.default, { key: index, obstacle: obstacle, index: index });
+                })
+              ),
+              _react2.default.createElement(_collectives2.default, {
+                type: this.props.gameData.config.game1.collectives.type,
+                size: this.props.gameData.config.game1.collectives.size,
+                min: this.props.gameData.config.game1.collectives.min,
+                max: this.props.gameData.config.game1.collectives.max,
+                gameId: 0
+              }),
+              (this.props.gameData.player === 'player1' && this.props.gameData.mode === 'player-vs-bot' || this.props.gameData.mode === 'player-vs-player') && _react2.default.createElement(_character2.default, {
+                gameId: 0,
+                type: this.props.gameData.config.game1.character.type,
+                keys: this.props.gameData.player1Keys
+              }),
+              (this.props.gameData.player === 'player2' && this.props.gameData.mode === 'player-vs-bot' || this.props.gameData.mode === 'bot-vs-bot') && _react2.default.createElement(_bot2.default, {
+                gameId: 0,
+                type: this.props.gameData.config.game1.character.type,
+                getCommands: this.props.getCommands,
+                showCodeEditor: this.props.gameData.showCodeEditor,
+                player1Function: this.props.player1Function,
+                onError: this.props.onError
+              })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { id: 'game1', style: this.getGameWrapperStyles() },
+            _react2.default.createElement(
+              _reactGameKit.Stage,
+              { style: this.getGameStyles() },
+              _react2.default.createElement(_tile2.default, { tiles: this.props.gameData.config.game2.tiles }),
+              _react2.default.createElement(
+                'div',
+                null,
+                this.props.gameData.config.game2.obstacles.map(function (obstacle, index) {
+                  return _react2.default.createElement(_obstacle2.default, { key: index, obstacle: obstacle, index: index });
+                })
+              ),
+              _react2.default.createElement(_collectives2.default, {
+                type: this.props.gameData.config.game2.collectives.type,
+                size: this.props.gameData.config.game2.collectives.size,
+                min: this.props.gameData.config.game2.collectives.min,
+                max: this.props.gameData.config.game2.collectives.max,
+                gameId: 1
+              }),
+              (this.props.gameData.player === 'player2' && this.props.gameData.mode === 'player-vs-bot' || this.props.gameData.mode === 'player-vs-player') && _react2.default.createElement(_character2.default, {
+                gameId: 1,
+                charId: 0,
+                type: this.props.gameData.config.game2.character.type,
+                keys: this.props.gameData.player2Keys
+              }),
+              (this.props.gameData.player === 'player1' && this.props.gameData.mode === 'player-vs-bot' || this.props.gameData.mode === 'bot-vs-bot') && _react2.default.createElement(_bot2.default, {
+                gameId: 1,
+                charId: 0,
+                type: this.props.gameData.config.game2.character.type,
+                getCommands: this.props.getCommands,
+                showCodeEditor: this.props.gameData.showCodeEditor,
+                player2Function: this.props.player2Function,
+                onError: this.props.onError
+              })
+            )
+          ),
+          this.props.gameData.showCodeEditor ? _react2.default.createElement(_codeEditor2.default, null) : ''
+        )
+      );
+    }
+  }]);
 
-    return SinglePlayerTwoWindows;
+  return SinglePlayerTwoWindows;
 }(_react.Component);
 
 exports.default = SinglePlayerTwoWindows;
